@@ -10,6 +10,13 @@
 }
 @font-face {
   font-family: "Geist";
+  src: url("/fonts/geist/Geist-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
   src: url("/fonts/geist/Geist-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: normal;
