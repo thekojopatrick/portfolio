@@ -3,14 +3,14 @@
 @tailwind utilities;
 @font-face {
   font-family: "Geist";
-  src: url("/fonts/geist/Geist-regular.tff") format("ttf");
+  src: url("/fonts/geist/Geist-Regular.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Geist";
-  src: url("/fonts/geist/Geist-bold.tff") format("tff");
+  src: url("/fonts/geist/Geist-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
