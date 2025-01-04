@@ -11,6 +11,7 @@ export default {
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
+        shine: "shine 5s linear infinite",
       },
       keyframes: {
         shimmer: {
@@ -20,6 +21,10 @@ export default {
           to: {
             backgroundPosition: "-200% 0",
           },
+        },
+        shine: {
+          "0%": { "background-position": "100%" },
+          "100%": { "background-position": "-100%" },
         },
       },
     },
