@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { Card } from "./ui/clerk-card";
 ---
 
@@ -7,7 +8,13 @@ import { Card } from "./ui/clerk-card";
     <div
       class="flex items-center justify-center h-full mx-auto max-w-screen-lg"
     >
-      <img src="/fintech-app-showreel.gif" class="object-cover" />
+      <Image
+        src={"/fintech-app-showreel.gif"}
+        width={1920}
+        height={1080}
+        class="object-cover"
+        alt="showreel"
+      />
     </div>
   </Card>
 </section>
