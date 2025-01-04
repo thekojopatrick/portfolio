@@ -4,8 +4,8 @@ export const SITE_TITLE = "Build with Kojo Patrick";
 export const SITE_DESCRIPTION = "Welcome to my website!";
 
 export const SITE: Site = {
-  NAME: "Astro Nano",
-  EMAIL: "markhorn.dev@gmail.com",
+  NAME: "Build with Kojo.",
+  EMAIL: "kojopatrick.dev@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
