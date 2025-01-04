@@ -1,0 +1,70 @@
+---
+import { content } from "tailwindcss/defaultTheme";
+import Marquee from "./ui/animata/marquee";
+import { Image } from "astro:assets";
+---
+
+<section class="animate my-20">
+  <div
+    class="relative flex h-full max-h-96 min-h-72 w-full min-w-72 items-center justify-center overflow-hidden rounded-md bg-background flex-col"
+  >
+    <Marquee>
+      {
+        [
+          {
+            src: "/projects/shot-1.jpg",
+            alt: "What's the stock price of Tesla?",
+          },
+          {
+            src: "/projects/shot-2.jpg",
+            alt: "Play the next episode of The Office",
+          },
+          {
+            src: "/projects/shot-3.jpg",
+            alt: "Show me the nearest coffee shop",
+          },
+          {
+            src: "/projects/shot-4.jpg",
+            alt: "What's the weather like in Kathmandu?",
+          },
+        ].map((item) => (
+          <div
+            class="flex h-full w-60 flex-1 flex-col justify-between items-center rounded-md border bg-gray-100"
+            id={`item-${item.alt}`}
+          >
+            <Image src={item.src} alt={item.alt} width={400} height={300} />
+          </div>
+        ))
+      }
+    </Marquee>
+    <Marquee reverse>
+      {
+        [
+          {
+            src: "/projects/shot-5.jpg",
+            alt: "What's the stock price of Tesla?",
+          },
+          {
+            src: "/projects/shot-6.jpg",
+            alt: "Play the next episode of The Office",
+          },
+          {
+            src: "/projects/shot-7.jpg",
+            alt: "Show me the nearest coffee shop",
+          },
+          {
+            src: "/projects/shot-8.jpg",
+            alt: "What's the weather like in Kathmandu?",
+          },
+        ].map((item) => (
+          <div
+            class="flex h-full w-60 flex-1 flex-col justify-between items-center rounded-md border bg-gray-100"
+            id={`item-${item.alt}`}
+          >
+            <Image src={item.src} alt={item.alt} width={400} height={300} />
+          </div>
+        ))
+      }
+    </Marquee>
+  </div>
+</section>
