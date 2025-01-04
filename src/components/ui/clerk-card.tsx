@@ -17,7 +17,7 @@ export const Card = ({ className, title, children }: CardProps) => {
     >
       {title && (
         <div className="group-hover/bento:translate-x-2 transition duration-200 p-3 pb-0">
-          <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200">
+          <div className="font-sans font-semibold text-neutral-600 dark:text-neutral-200">
             {title}
           </div>
         </div>

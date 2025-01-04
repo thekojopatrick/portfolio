@@ -1,0 +1,68 @@
+---
+import { Card } from "./ui/clerk-card";
+
+const skills = ["website", "app design", "mvps", "prototypes", "ui animations"];
+const products = ["saas", "b2c", "social platform", "fintech", "and more"];
+const tools = [
+  "figma",
+  "photoshop",
+  "shopify",
+  "framer motion",
+  "react (nextjs)",
+  "tailwinds css",
+  "cursor, v0, claude",
+];
+---
+
+<section class="max-w-6xl mx-auto my-10">
+  <h1 class="text-center text-3xl font-medium mb-16 leading-relaxed">
+    You'll catch me doing a<br />combo of these:
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+    <!-- Things I Create Column -->
+    <div class="">
+      <Card title="things I create">
+        <div class="space-y-3">
+          {
+            skills.map((item) => (
+              <div class="p-4 shadow-sm transform hover:-translate-y-1 transition-transform duration-200">
+                <p class="text-gray-900 font-semibold">{item}</p>
+              </div>
+            ))
+          }
+        </div>
+      </Card>
+    </div>
+
+    <!-- For Products In Column -->
+    <div class="space-y-4 md:mt-12">
+      <Card title="for products in">
+        <div class="space-y-3">
+          {
+            products.map((item) => (
+              <div class="p-4 shadow-sm transform hover:-translate-y-1 transition-transform duration-200">
+                <p class="text-gray-900 font-semibold">{item}</p>
+              </div>
+            ))
+          }
+        </div>
+      </Card>
+    </div>
+
+    <!-- Using Tools Like Column -->
+    <div class="space-y-4 md:mt-24">
+      <Card title="using tools like">
+        <div class="space-y-3">
+          {
+            tools.map((item) => (
+              <div class="p-4 shadow-sm transform hover:-translate-y-1 transition-transform duration-200">
+                <p class="text-gray-900 font-semibold">{item}</p>
+              </div>
+            ))
+          }
+        </div>
+      </Card>
+    </div>
+  </div>
+</section>
