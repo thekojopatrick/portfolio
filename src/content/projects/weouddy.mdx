@@ -6,7 +6,7 @@ demoURL: "https://astro-sphere-demo.vercel.app"
 repoURL: "https://github.com/markhorn-dev/astro-sphere"
 ---
 
-import WeOuddyLanding from '@/components/Project'
+import Project from '@/components/Project.astro'
 
 export const pageData = {
   title: "WeOuddy",
@@ -19,13 +19,13 @@ export const pageData = {
     "nextjs",
     "supabase"
   ],
-  imageSrc: "/projects/weouddy-cover.jpg",
+  coverImageSrc: "/projects/weouddy-hero.jpg",
   imageAlt: "Three people smiling at camera",
   tagline: "We build connects people to community instead of events"
 }
 
 
-<WeOuddyLanding {...pageData} />
+<Project {...pageData} />
 
 ## Project Overview
 
