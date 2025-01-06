@@ -22,7 +22,9 @@ export const Card = ({ className, title, children }: CardProps) => {
           </div>
         </div>
       )}
-      <div className="bg-white border-t rounded-2xl">{children}</div>
+      <div className="bg-white dark:bg-stone-900 border-t rounded-2xl">
+        {children}
+      </div>
     </div>
   );
 };

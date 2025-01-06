@@ -26,7 +26,9 @@ const tools = [
           {
             skills.map((item) => (
               <div class="p-4 shadow-sm transform hover:-translate-y-1 transition-transform duration-200">
-                <p class="text-gray-900 font-semibold">{item}</p>
+                <p class="text-gray-900 dark:text-white/75 font-semibold">
+                  {item}
+                </p>
               </div>
             ))
           }
@@ -41,14 +43,18 @@ const tools = [
           {
             products.map((item) => (
               <div class="p-4 shadow-sm transform hover:-translate-y-1 transition-transform duration-200">
-                <p class="text-gray-900 font-semibold">{item}</p>
+                <p class="text-gray-900 dark:text-white/75 font-semibold">
+                  {item}
+                </p>
               </div>
             ))
           }
           <div
             class="p-4 shadow-sm transform hover:-translate-y-1 transition-transform duration-200"
           >
-            <p class="text-gray-900/25 font-semibold">{"and more"}</p>
+            <p class="text-gray-900/25 dark:text-white/75 font-semibold">
+              {"and more"}
+            </p>
           </div>
         </div>
       </Card>
@@ -60,8 +66,10 @@ const tools = [
         <div class="space-y-3">
           {
             tools.map((item) => (
-              <div class="p-4 shadow-sm transform hover:-translate-y-1 transition-transform duration-200">
-                <p class="text-gray-900 font-semibold">{item}</p>
+              <div class="p-4 shadow-sm dark:shadow-white transform hover:-translate-y-1 transition-transform duration-200">
+                <p class="text-gray-900 dark:text-white/75 font-semibold">
+                  {item}
+                </p>
               </div>
             ))
           }
