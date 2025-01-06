@@ -60,7 +60,7 @@ main {
 }
 
 footer {
-  @apply py-5 text-sm;
+  @apply py-5 text-sm z-40;
 }
 
 article {
