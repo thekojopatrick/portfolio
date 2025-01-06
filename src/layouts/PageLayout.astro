@@ -3,7 +3,6 @@ import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE } from "@consts";
-import { TooltipProvider } from "@components/ui/tooltip";
 
 type Props = {
   title: string;
@@ -21,9 +20,7 @@ const { title, description } = Astro.props;
   <body class="background-effect">
     <Header />
     <main>
-      <TooltipProvider>
-        <slot />
-      </TooltipProvider>
+      <slot />
     </main>
     <Footer />
   </body>
