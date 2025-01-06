@@ -56,7 +56,7 @@ header {
 }
 
 main {
-  @apply flex-1 py-32;
+  @apply flex-1 py-32 z-40;
 }
 
 footer {
