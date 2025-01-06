@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --font-instruments-serif: "Instrument Serif", "Lora", ui-serif, Georgia,
+    Cambria, "Times New Roman", Times, serif;
+}
 @font-face {
   font-family: "Geist";
   src: url("/fonts/geist/Geist-Regular.ttf") format("ttf");

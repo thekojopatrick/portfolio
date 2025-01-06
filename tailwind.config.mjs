@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Geist", ...defaultTheme.fontFamily.sans],
-        serif: ["Lora", ...defaultTheme.fontFamily.serif],
+        serif: ["Instrument Serif", ...defaultTheme.fontFamily.serif],
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
