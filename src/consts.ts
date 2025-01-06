@@ -1,7 +1,8 @@
 import type { Site, Metadata, Socials } from "@types";
 
-export const SITE_TITLE = "Build with Kojo Patrick";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+export const SITE_TITLE = "Build with Kojo.";
+export const SITE_DESCRIPTION =
+  "Building solutions that thrive in the digital world. Located in Ghana. Delivering tailor-made digital designs and building interactive websites & web application from scratch. © Build with Kojo";
 
 export const SITE: Site = {
   NAME: "Build with Kojo.",
@@ -12,8 +13,9 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  TITLE: "Kojo Patrick • Freelance Designer & Developer",
+  DESCRIPTION:
+    "Building solutions that thrive in the digital world. Located in Ghana. Delivering tailor-made digital designs and building interactive websites & web application from scratch. © Build with Kojo",
 };
 
 export const BLOG: Metadata = {
