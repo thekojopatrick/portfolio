@@ -1,4 +1,8 @@
 ---
+import { Button } from "@/components/ui/button";
+import { Dot } from "lucide-react";
+import ShimmerButton from "@/components/ui/shimmer-button";
+
 const roles = ["Product design", "Design engineer", "PM", "Business analyst"];
 ---
 
@@ -7,7 +11,7 @@ const roles = ["Product design", "Design engineer", "PM", "Business analyst"];
 >
   <div class="max-w-3xl mx-auto space-y-1">
     <div
-      class="flex items-center justify-center gap-2 text-xl sm:text-2xl md:text-3xl font-medium animate flex-wrap"
+      class="flex items-center justify-center gap-2 text-lg sm:text-2xl font-medium animate flex-wrap"
     >
       <span>Akwaaba, I&apos;m</span>
       <div class="relative inline-block w-20 h-10 rounded-lg overflow-hidden">
@@ -20,7 +24,7 @@ const roles = ["Product design", "Design engineer", "PM", "Business analyst"];
       </div>
       <span class="font-serif italic">Kojo Patrick,</span>
     </div>
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-medium animate">
+    <h2 class="text-lg sm:text-2xl font-medium animate">
       Ghanaian{" "}
       <span class="inline-block" role="img" aria-label="Ghana flag"> 🇬🇭</span>{
         " "
@@ -37,12 +41,28 @@ const roles = ["Product design", "Design engineer", "PM", "Business analyst"];
         roles.map((role) => (
           <span
             id={role}
-            class="px-3 py-1 text-base font-medium text-black/80 dark:text-black/75 rounded-full bg-zinc-100 lowercase hover:bg-secondary/80 transition-colors"
+            class="px-3 py-1 text-xs font-medium text-black/80 dark:text-black/75 rounded-full bg-zinc-100 lowercase hover:bg-secondary/80 transition-colors"
           >
             {role}
           </span>
         ))
       }
+    </div>
+
+    <div class="flex items-center gap-3">
+      <Button variant="outline" className="rounded-full gap-1.5">
+        <span
+          class="size-1.5 rounded-full bg-emerald-500 animate-pulse"
+          aria-hidden="true"></span>
+        open for work
+      </Button>
+      <ShimmerButton className="shadow-2xl">
+        <span
+          class="text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10"
+        >
+          Start a project
+        </span>
+      </ShimmerButton>
     </div>
   </div>
 </section>
