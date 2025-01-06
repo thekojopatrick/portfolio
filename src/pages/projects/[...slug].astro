@@ -25,10 +25,10 @@ const { Content } = await render(project);
 
 <PageLayout title={project.data.title} description={project.data.description}>
   <Container>
-    <div class="animate">
+    <div class="animate max-w-7xl mx-auto">
       <BackToPrev href="/"> Back to home </BackToPrev>
     </div>
-    <div class="space-y-1 my-10">
+    <div class="space-y-1 my-10 max-w-7xl mx-auto">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
           <FormattedDate date={project.data.date} />
@@ -43,7 +43,7 @@ const { Content } = await render(project);
       </div>
       {
         (project.data.demoURL || project.data.repoURL) && (
-          <nav class="animate flex gap-1">
+          <nav class="animate flex gap-1 md:hidden">
             {project.data.demoURL && (
               <Link href={project.data.demoURL} external>
                 demo
@@ -59,7 +59,7 @@ const { Content } = await render(project);
         )
       }
     </div>
-    <article class="animate">
+    <article class="animate max-w-7xl mx-auto">
       <Content />
     </article>
   </Container>
