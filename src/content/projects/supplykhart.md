@@ -14,9 +14,6 @@ It is primarily Astro, Tailwind and Typescript, with a very small amount of Soli
 
 ## 🚀 Deploy your own
 
-[![Deploy with Vercel](../deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-sphere)
-[![Deploy with Netlify](../deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-sphere)
-
 ## 📋 Features
 
 - ✅ 100/100 Lighthouse performance
@@ -35,8 +32,6 @@ It is primarily Astro, Tailwind and Typescript, with a very small amount of Soli
 - ✅ Searchable content (posts and projects)
 
 ## 💯 Lighthouse score
-
-![Astro Sphere Lighthouse Score](/lighthouse.png)
 
 ## 🕊️ Lightweight
 
