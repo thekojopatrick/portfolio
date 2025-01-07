@@ -81,6 +81,16 @@ article {
   }
 }
 
+/** Light theme particles on home page */
+@keyframes animateParticle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
 .animate {
   @apply opacity-0 translate-y-3;
   @apply transition-all duration-700 ease-out;
