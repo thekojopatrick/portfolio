@@ -1,0 +1,23 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import Projects from "@components/Projects.astro";
+import { PROJECTS } from "@consts";
+---
+
+<PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading max-w-7xl mx-auto px-6">
+      <h3 class="text-3xl font-medium leading-10 max-w-3xl">
+        Transforming Ideas into High-Impact Digital Products with a Focus on
+        User Experience
+      </h3>
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <Projects client:load title="" />
+    </div>
+  </BottomLayout>
+</PageLayout>

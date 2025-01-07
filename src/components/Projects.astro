@@ -1,13 +1,21 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+
+type Props = {
+  title?: string;
+};
+
+const { title = "Selected projects since 2022" } = Astro.props;
 ---
 
 <section class="p-4 space-y-6 md:p-6 lg:p-8 max-w-7xl mx-auto">
-  <h2
-    class="text-md md:text-lg w-full text-left font-semibold mb-12 animate uppercase"
-  >
-    Selected projects since 2022
-  </h2>
+  {
+    title && (
+      <h2 class="text-md md:text-lg w-full text-left font-semibold mb-12 animate uppercase">
+        {title}
+      </h2>
+    )
+  }
   <div class="space-y-8">
     <ProjectCard
       category="Personal"
