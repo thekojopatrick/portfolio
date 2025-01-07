@@ -17,6 +17,11 @@ export const HOME: Metadata = {
   DESCRIPTION:
     "Building solutions that thrive in the digital world. Located in Ghana. Delivering tailor-made digital designs and building interactive websites & web application from scratch. © Build with Kojo",
 };
+export const ABOUT: Metadata = {
+  TITLE: "My Story",
+  DESCRIPTION:
+    "Building solutions that thrive in the digital world. Located in Ghana. Delivering tailor-made digital designs and building interactive websites & web application from scratch. © Build with Kojo",
+};
 
 export const BLOG: Metadata = {
   TITLE: "Blog",
