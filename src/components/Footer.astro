@@ -1,44 +1,109 @@
 ---
 import { SITE, SOCIALS } from "@consts";
 import Link from "./Link.astro";
+import Container from "@/components/Container.astro";
+import { Image } from "astro:assets";
+import { formatDate } from "@lib/utils";
 
 const today = new Date();
 ---
 
-<footer class="space-y-6 max-w-screen-2xl mx-auto pb-20 px-5">
+<footer class="space-y-6">
   <section class="animate space-y-4">
-    <h5 class="font-semibold text-md md:text-lg text-black dark:text-white">
-      Let's Connect
-    </h5>
-    <article>
-      <p>
-        If you want to get in touch with me about something or just to say hi,
-        reach out on social media or send me an email.
-      </p>
-    </article>
-    <ul class="flex flex-wrap gap-2">
-      {
-        SOCIALS.map((SOCIAL) => (
-          <li class="flex gap-x-2 text-nowrap">
-            <Link
-              href={SOCIAL.HREF}
-              external
-              aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
-            >
-              {SOCIAL.NAME}
-            </Link>
-            {"/"}
-          </li>
-        ))
-      }
-      <li class="line-clamp-1">
-        <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-          {SITE.EMAIL}
-        </Link>
-      </li>
-    </ul>
+    <Container size="lg">
+      <h5 class="font-semibold text-md md:text-lg text-black dark:text-white">
+        Let's Connect
+      </h5>
+      <article>
+        <p>
+          If you want to get in touch with me about something or just to say hi,
+          reach out on social media or send me an email.
+        </p>
+      </article>
+      <ul class="flex flex-wrap gap-2">
+        {
+          SOCIALS.map((SOCIAL) => (
+            <li class="flex gap-x-2 text-nowrap">
+              <Link
+                href={SOCIAL.HREF}
+                external
+                aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+              >
+                {SOCIAL.NAME}
+              </Link>
+              {"/"}
+            </li>
+          ))
+        }
+        <li class="line-clamp-1">
+          <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+            {SITE.EMAIL}
+          </Link>
+        </li>
+      </ul>
+    </Container>
   </section>
-  <div class="animate">
-    &copy; {today.getFullYear()} Kojo Patrick. All rights reserved.
+
+  <div
+    class="whitespace-nowrap border-t border-black/10 dark:border-white/25 my-5 max-w-screen-lg mx-auto"
+  >
   </div>
+  <section class="overflow-hidden animate pb-6">
+    <Container size="lg">
+      <div
+        class="flex items-center justify-between flex-wrap sm:grid grid-cols-1 sm:grid-cols-2 gap-3"
+      >
+        <div class="flex flex-col items-center sm:items-start">
+          <a
+            href="/"
+            class="flex items-center gap-1 w-fit font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+          >
+            <Image
+              src="/projects/profile-image.jpg"
+              width={40}
+              height={40}
+              alt={"Profile picture"}
+            />
+            {SITE.NAME}
+          </a>
+        </div>
+        <div class="flex gap-2 justify-center sm:justify-end items-center">
+          <span class="relative flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300"
+            ></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"
+            ></span>
+          </span>
+          WIP
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-between">
+        <span
+          >Accra, Ghana
+          {today.toLocaleTimeString()}
+          {formatDate(today)}</span
+        >
+        <span>&copy; {today.getFullYear()} Kojo Patrick.</span>
+      </div>
+    </Container>
+  </section>
 </footer>
+
+<script is:inline>
+  function goBackToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  function inintializeBackToTop() {
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", goBackToTop);
+  }
+
+  document.addEventListener("astro:after-swap", inintializeBackToTop);
+  inintializeBackToTop();
+</script>
