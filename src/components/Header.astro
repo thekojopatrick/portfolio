@@ -7,7 +7,7 @@ import Container from "./Container.astro";
 <header>
   <Container>
     <nav
-      class="flex flex-wrap max-w-3xl shadow-sm mx-auto gap-y-2 justify-between border border-zinc-200 rounded-full px-4 py-2 items-center bg-white/80 backdrop-blur-sm"
+      class="flex flex-wrap max-w-3xl shadow-sm mx-auto gap-y-2 justify-between border border-zinc-200 rounded-full px-4 py-2 items-center bg-white/80 backdrop-blur-sm animate"
     >
       <Link href="/" underline={false}>
         <div class="font-medium text-sm">
@@ -17,7 +17,6 @@ import Container from "./Container.astro";
       <nav class="flex gap-2 items-center">
         <div class="hidden md:block space-x-2">
           <Link href="/about" underline={false}> story </Link>
-          <Link href="#work" underline={false}> work </Link>
           <Link href="/projects" underline={false}> projects </Link>
         </div>
         <Link
