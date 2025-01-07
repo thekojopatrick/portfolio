@@ -4,6 +4,7 @@ import Link from "./Link.astro";
 import Container from "@/components/Container.astro";
 import { Image } from "astro:assets";
 import { formatDate } from "@lib/utils";
+import ShimmerButton from "./ui/shimmer-button";
 
 const today = new Date();
 ---
@@ -16,9 +17,17 @@ const today = new Date();
       </h5>
       <article>
         <p>
-          If you want to get in touch with me about something or just to say hi,
-          reach out on social media or send me an email.
+          Whether you’re building a company, agency, or startup—or assembling a
+          dynamic team or If you’re an investor or sponsor seeking scalable,
+          innovative solutions.I’m here! If you want to get in touch with me
+          about something or just to say hi, reach out on social media or send
+          me an email.
         </p>
+        <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+          <ShimmerButton className="mb-5 rounded-full py-1">
+            Connect
+          </ShimmerButton>
+        </Link>
       </article>
       <ul class="flex flex-wrap gap-2">
         {
@@ -31,19 +40,19 @@ const today = new Date();
               >
                 {SOCIAL.NAME}
               </Link>
-              {"/"}
+              {!SOCIALS.length ? "/" : "/"}
             </li>
           ))
         }
-        <li class="line-clamp-1">
+        <!-- <li class="line-clamp-1">
           <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
             {SITE.EMAIL}
           </Link>
-        </li>
+        </li> -->
       </ul>
     </Container>
   </section>
-  <section class="py-5">
+  <section class="py-5 animate">
     <Container size="lg">
       <div class="flex items-center justify-center sm:justify-end">
         <button
@@ -84,7 +93,7 @@ const today = new Date();
     </Container>
   </section>
   <div
-    class="whitespace-nowrap border-t border-black/10 dark:border-white/25 my-5 max-w-screen-lg mx-auto"
+    class="whitespace-nowrap border-t border-black/10 dark:border-white/25 my-5 max-w-screen-lg mx-auto animate"
   >
   </div>
   <section class="overflow-hidden animate pb-6">
