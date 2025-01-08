@@ -184,3 +184,17 @@ html.scrolled #back-to-top {
     transform: translate(-15%, -20%);
   }
 }
+
+.tooltip {
+  @apply visible md:invisible absolute;
+  @apply bg-black/85 text-white text-sm font-sans not-italic;
+  @apply bottom-8 left-[10%] md:left-1/4 transform -translate-x-1/2  md:-translate-x-1/3;
+}
+
+.has-tooltip {
+  @apply underline underline-offset-2 text-lg sm:text-2xl text-zinc-400;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
