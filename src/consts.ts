@@ -1,5 +1,7 @@
 import type { Site, Metadata, Socials } from "@types";
 
+export const GA_TRACKING_ID = "G-QBGYSF417P";
+
 export const SITE_TITLE = "Build with Kojo.";
 export const SITE_DESCRIPTION =
   "Building solutions that thrive in the digital world. Located in Ghana. Delivering tailor-made digital designs and building interactive websites & web application from scratch. © Build with Kojo";
