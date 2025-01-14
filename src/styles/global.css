@@ -33,10 +33,6 @@ html {
   color-scheme: light;
 }
 
-html.dark {
-  color-scheme: dark;
-}
-
 html,
 body {
   @apply size-full;
@@ -45,13 +41,13 @@ body {
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-stone-100/5 dark:bg-stone-900;
-  @apply text-black/80 dark:text-white/75;
+  @apply bg-stone-100/5;
+  @apply text-black/80;
 }
 
 header {
   @apply fixed top-0 left-0 right-0 z-50 py-0 pt-5;
-  @apply bg-stone-100/0 dark:bg-stone-900/25;
+  @apply bg-stone-100/0;
   /* @apply backdrop-blur-lg saturate-200; */
 }
 
@@ -64,20 +60,20 @@ footer {
 }
 
 article {
-  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply max-w-full prose  prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold prose-p:font-sans;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply prose-headings:text-black;
 }
 
 @layer utilities {
   article a {
     @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
+    @apply decoration-black/15;
     @apply transition-colors duration-300 ease-in-out;
   }
   article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
+    @apply text-black;
+    @apply decoration-black/25;
   }
 }
 
