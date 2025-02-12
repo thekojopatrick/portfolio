@@ -1,43 +1,123 @@
 ---
-title: Wdyk (What do you know)
-description: "Learn to Spell with Fun and Feedback"
+title: WDYK (What Do You Know)
+description: "A React Native spelling tutor with AI voice synthesis"
 date: '2024-01-06'
-demoURL: ""
 repoURL: "https://github.com/thekojopatrick/wdyk-app.git"
+key_tech:
+  - "Expo SDK"
+  - "Supabase Realtime"
+  - "ElevenLabs Voice AI"
 ---
 
 import Project from '@/components/Project.astro'
 
 export const pageData = {
-  title: "What Do You Know",
-  description: "Wdyk is a mobile application built to help users enhance their spelling skills in a gamified and interactive way. Perfect for learners of all levels, the app combines education with fun to make spelling practice engaging and effective",
+  title: "WDYK - AI-Powered Spelling Tutor",
+  description: "A mobile app blending React Native animations with AI voice synthesis to make spelling practice engaging. Built to master Expo workflows and real-time data sync.",
   tags: [
-    "ui/ux research",
-    "app design",
-    "web app design",
-    "mobile design",
-    "nextjs",
-    "supabase"
+    "React Native",
+    "Expo SDK",
+    "Supabase",
+    "ElevenLabs API",
+    "Animated API",
+    "EdTech Experiment"
   ],
   coverImageSrc: "/projects/wdyk-hero.jpg",
-  imageAlt: "Happy Farmers",
-  tagline: "Interactive Spelling Bee App"
+  imageAlt: "WDYK app showing voice waveform and spelling UI",
+  tagline: "Where AI voices meet mobile-first learning",
+  challenges: [
+    "Syncing ElevenLabs API latency with UI feedback",
+    "Offline-first audio caching",
+    "Cost-effective voice synthesis"
+  ]
 }
-
 
 <Project {...pageData} />
 
-## Project Overview
+## Project Goals: Learning Through Building
 
-The platform’s key features include:
+As a web developer expanding into mobile, I aimed to:
+1. Master React Native core concepts
+2. Implement complex touch interactions
+3. Solve real device compatibility issues
+4. Ship to TestFlight/Play Store
 
-- Interactive Spelling Bee Game: Users guess and spell words correctly based on audio pronunciation.
-- Immediate Feedback: Highlights correct and incorrect answers to reinforce learning in real time.
-- Homophone Challenges: A "guess the word" game mode focused on distinguishing and spelling homophones.
-- Audio Support: Words are paired with clear pronunciations to aid understanding and spelling accuracy.
-- Progress Tracking: Keeps users motivated by tracking their improvement over time.
+**Why a Spelling App?**  
+Perfect for testing:
+- Audio playback timing
+- Instant visual feedback
+- Progress tracking across sessions
 
-In this project,designing intuitive game mechanics, ensuring accessibility in the interface, and creating a seamless user flow that maximizes learning while keeping the experience fun.
+![What do you mobile view](/projects/wdyk-02.jpg)
+
+## Technical Deep Dive
+
+**Tech Stack Choices**
+- React Native: Cross-platform efficiency
+- Expo: Accelerated development cycle
+- Reanimated: 60fps animations
+- Backend: Supabase
+- AI: ElevenLabs API for voice & OpenAI for words suggestions
+- Animation sequence breakdown
+
+**Challenges & Lessons Learned**
+- Audio Latency Issues
+  Problem: Pronunciation playback delayed on low-end devices
+  Solution: Pre-cache assets and use Expo’s Sound object pooling
+
+- Animation Jank
+  Problem: Frame drops during tile movements
+  Solution: Switch from JS-driven to Reanimated’s native threads
+
+**What I’d Do Differently**
+- Use TypeScript more rigorously
+- Add error boundaries earlier
+
+**Results & Next Steps**
+- Implemented complex ui
+- Expanded my knolwedge on mobile animation
+- Write an Learnings
+- Try to successfully published to play store
+- Try animation consistency across devices
+- Master Expo EAS build system
 
 ![What do you know mobile design view](/projects/wdyk-01.jpg)
-![What do you mobile view](/projects/wdyk-02.jpg)
+
+**Future Experimentation Ideas**
+- Add multiplayer mode via WebSockets
+- Implement ML-based difficulty scaling
+- Create teacher dashboard with React Native Web
+
+Want the Code?
+This project is open source - perfect for:
+
+- React Native beginners
+- Educators wanting to customize
+- Mobile devs curious about Expo
+- Explore Codebase
+
+
+### Architecture
+```mermaid
+graph TD
+  A[React Native] --> B[Expo Audio]
+  A --> C[Supabase DB]
+  A --> D[ElevenLabs API]
+  C -->|Store word metadata| D
+  D -->|Stream MP3| B
+```
+
+### Technical Deep Dive
+```typescript
+// Generate and cache pronunciation
+const generateAudio = async (word: string) => {
+  const { data } = await supabase
+    .from('words')
+    .select('audio_url')
+    .eq('word', word);
+
+  if (!data?.length) {
+    const aiAudio = await elevenlabs.generate({ text: word });
+    await supabase.storage.upload(`audios/${word}.mp3`, aiAudio);
+  }
+};
