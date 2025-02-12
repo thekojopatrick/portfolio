@@ -1,70 +1,85 @@
 ---
-import { Button } from "@/components/ui/button";
 import ShimmerButton from "@/components/ui/shimmer-button";
 
-const roles = ["Product design", "Design engineer", "PM", "Business analyst"];
+const roles = [
+  "React/TypeScript",
+  "SaaS Architecture",
+  "AI Prototyping",
+  "UX Engineering",
+  "Supabase",
+  "Framer Motion",
+  "Business Analystics",
+  "PM",
+];
 ---
 
 <section
   class="min-h-[50vh] flex flex-col items-center justify-center text-left md:text-center px-4 py-20"
 >
-  <div class="max-w-3xl mx-auto space-y-1">
-    <div
-      class="flex items-center md:justify-center gap-2 text-lg sm:text-2xl font-medium animate flex-wrap"
-    >
-      <span class="has-tooltip">
-        Akwaaba<span class="tooltip">Welcome!</span>
+  <div class="max-w-3xl mx-auto space-y-4">
+    <!-- Simplified header with stronger value prop -->
+    <div class="flex items-center gap-3 text-2xl sm:text-3xl font-medium">
+      <span class="has-tooltip group relative">
+        🇬🇭
+        <span class="tooltip">Building global solutions from Ghana</span>
       </span>
-      <span class="">, I&apos;m</span>
-      <div class="relative inline-block w-20 h-10 rounded-lg overflow-hidden">
-        <img
-          src="/profile-image.jpg"
-          alt="Profile"
-          class="object-cover w-20"
-          sizes="40px"
-        />
-      </div>
-      <span class="font-serif italic">Kojo Patrick,</span>
+      <img
+        src="/profile-image.jpg"
+        alt="Profile"
+        class="object-cover w-20"
+        sizes="40px"
+      />
+      <h1 class="font-serif italic">Kojo Patrick</h1>
     </div>
-    <h2 class="text-lg sm:text-2xl font-medium animate">
-      Ghanaian{" "}
-      <span class="inline-block" role="img" aria-label="Ghana flag"> 🇬🇭</span>{
-        " "
-      }
-      product designer & design engineer,
+
+    <!-- Punchier headline with technical specificity -->
+    <h2 class="text-3xl sm:text-5xl font-bold leading-tight text-left">
+      Full-Stack Product Engineer
       <br />
-      leveraging <span class="font-serif italic">AI tools</span> to build <span
-        class="font-serif italic">cool mvps</span
-      >.
+      <span class="text-zinc-500 font-normal text-2xl">
+        Bridging <span class="italic font-serif">Figma</span> to <span
+          class="italic font-serif">React</span
+        > with
+      </span>
+      <span
+        class="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent text-2xl"
+      >
+        AI-Augmented Speed
+      </span>
     </h2>
 
-    <div class="flex flex-wrap md:justify-center gap-3 py-6 animate">
+    <!-- Metrics-driven subheading -->
+    <p class="text-base text-zinc-600 text-left">
+      Shipped 10+ production apps • 95% client satisfaction • 30% faster
+      iterations via AI tooling
+    </p>
+
+    <!-- Skills chips with technical focus -->
+    <div class="flex flex-wrap gap-2 py-4">
       {
-        roles.map((role) => (
-          <span
-            id={role}
-            class="px-3 py-1 text-xs font-medium text-black/80 rounded-full bg-zinc-100 lowercase hover:bg-secondary/80 transition-colors"
-          >
-            {role}
+        roles.map((skill) => (
+          <span class="px-3 py-1.5 text-xs font-medium bg-zinc-100 rounded-full">
+            {skill}
           </span>
         ))
       }
     </div>
 
-    <div class="flex flex-wrap items-center md:justify-center gap-3 animate">
-      <Button variant="outline" className="rounded-full gap-1.5 ">
-        <span
-          class="size-1.5 rounded-full bg-emerald-500 animate-ping"
-          aria-hidden="true"></span>
-        open for work
-      </Button>
-      <ShimmerButton className="shadow-2xl">
-        <span
-          class="text-center text-sm font-medium leading-none tracking-tight text-white"
-        >
-          Start a project
+    <!-- Action buttons with clear hierarchy -->
+    <div class="flex flex-wrap gap-4 items-center">
+      <a href="/projects" class="">
+        <ShimmerButton className="text-sm"> View Case Studies → </ShimmerButton>
+      </a>
+      <div class="flex items-center gap-2 text-zinc-500">
+        <span class="relative flex h-3 w-3">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"
+          ></span>
         </span>
-      </ShimmerButton>
+        <span class="text-sm">Available for contracts & full-time roles</span>
+      </div>
     </div>
   </div>
 </section>

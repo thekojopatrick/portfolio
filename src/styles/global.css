@@ -184,7 +184,7 @@ html.scrolled #back-to-top {
 .tooltip {
   @apply visible md:invisible absolute;
   @apply bg-black/85 text-white text-sm font-sans not-italic;
-  @apply bottom-8 left-[10%] md:left-1/4 transform -translate-x-1/2  md:-translate-x-1/3;
+  @apply bottom-8 left-[0%] md:left-0 transform -translate-x-0  md:-translate-x-0 whitespace-nowrap;
 }
 
 .has-tooltip {
