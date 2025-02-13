@@ -3,14 +3,16 @@ import { cn } from "@lib/utils";
 
 type Props = {
   size?: "sm" | "md" | "lg" | "xl" | "2xl";
+  className?: string;
 };
 
-const { size = "xl" } = Astro.props;
+const { size = "xl", className } = Astro.props;
 ---
 
 <div
   class={cn(
-    "w-full h-full mx-auto px-5",
+    "w-full h-full mx-auto md:px-5",
+    className,
     size === "sm" && "max-w-screen-sm",
     size === "md" && "max-w-screen-md",
     size === "lg" && "max-w-screen-lg",
