@@ -1,9 +1,14 @@
 ---
 title: Supplykhart
-description: "Affordable and Convenient Farm Produce Delivery"
+description: "Hyperlocal Grocery Delivery for Africa's Unique Markets"
 date: '2024-01-06'
 demoURL: "https://supplykhart.com"
-repoURL: ""
+stack:
+  - "Next.js PWA (Offline-First)"
+  - "Location-Based Caching"
+  - "Low-Bandwidth Optimization"
+metrics:
+  - "3.2s avg load time on 2G"
 ---
 
 import Project from '@/components/Project.astro'
@@ -12,18 +17,21 @@ export const pageData = {
   title: "Supplykhart",
   description: "Supplykhart is a platform dedicated to making fresh, high-quality farm produce accessible to everyone. Designed to connect local farms with households, restaurants, and businesses, Supplykhart ensures customers receive the best produce delivered directly to their doorstep.",
   tags: [
-    "ui/ux research",
-    "app design",
-    "web app design",
-    "mobile design",
-    "nextjs",
-    "supabase"
+    "Next.js PWA",
+    "Prisma + Supabase",
+    "tRPC Type-Safety",
+    "Market-Specific UX"
   ],
   coverImageSrc: "/projects/supplykhart-hero.jpg",
-  imageAlt: "Happy Farmers",
-  tagline: "Connecting Local Farms to Your Doorstep"
+  imageAlt: "Mobile interface showing local produce and mobile money payment",
+  tagline: "Connecting Local Farms to Your Doorstep",
+  challenges: [
+    "40% users on 2G/3G networks",
+    "70% prefer cash-on-delivery",
+    "Frequent network outages",
+    "100+ local produce variants"
+  ]
 }
-
 
 <Project {...pageData} />
 
