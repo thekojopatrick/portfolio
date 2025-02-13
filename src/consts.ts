@@ -57,11 +57,11 @@ export const SOCIALS: Socials = [
     HREF: "https://github.com/thekojopatrick",
   },
   {
-    NAME: "portfolio",
-    HREF: "https://kojopatrick.com/projects", // Direct to project case studies
-  },
-  {
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/kojo-patrick-43bb87ab",
   },
+  // {
+  //   NAME: "portfolio",
+  //   HREF: "https://kojopatrick.com/projects", // Direct to project case studies
+  // },
 ];

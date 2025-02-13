@@ -15,9 +15,9 @@ const today = new Date();
       <h5 class="font-semibold text-md md:text-lg text-black">Let's Connect</h5>
       <article>
         <p>
-          Whether you’re building a company, agency, or startup—or assembling a
-          dynamic team or If you’re an investor or sponsor seeking scalable,
-          innovative solutions.I’m here! If you want to get in touch with me
+          Whether you're building a company, agency, or startup—or assembling a
+          dynamic team or If you're an investor or sponsor seeking scalable,
+          innovative solutions.I'm here! If you want to get in touch with me
           about something or just to say hi, reach out on social media or send
           me an email.
         </p>
@@ -29,7 +29,7 @@ const today = new Date();
       </article>
       <ul class="flex flex-wrap gap-2">
         {
-          SOCIALS.map((SOCIAL) => (
+          SOCIALS.map((SOCIAL, index) => (
             <li class="flex gap-x-2 text-nowrap">
               <Link
                 href={SOCIAL.HREF}
@@ -38,7 +38,7 @@ const today = new Date();
               >
                 {SOCIAL.NAME}
               </Link>
-              {!SOCIALS.length ? "/" : "/"}
+              {index !== SOCIALS.length - 1 && "/"}
             </li>
           ))
         }

@@ -55,7 +55,7 @@ const MobileNav = ({ email }: { email: string }) => {
               className="p-2 -m-2"
               aria-label="Close menu"
             >
-              <div className="bg-emerald-500 rounded-full p-2 transition-transform hover:scale-110">
+              <div className="bg-amber-500 rounded-full p-2 transition-transform hover:scale-110">
                 <X className="w-5 h-5 text-white" />
               </div>
             </button>
@@ -105,7 +105,7 @@ const MobileNav = ({ email }: { email: string }) => {
               Socials
             </div>
             <ul className="flex flex-wrap gap-6 text-white text-lg">
-              {SOCIALS.map((SOCIAL) => (
+              {SOCIALS.map((SOCIAL, index) => (
                 <li className="flex gap-x-2 text-nowrap">
                   <a
                     href={SOCIAL.HREF}
@@ -115,7 +115,7 @@ const MobileNav = ({ email }: { email: string }) => {
                   >
                     {SOCIAL.NAME}
                   </a>
-                  {!SOCIALS.length ? "/" : "/"}
+                  {index !== SOCIALS.length - 1 && "/"}
                 </li>
               ))}
             </ul>
