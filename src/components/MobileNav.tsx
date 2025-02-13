@@ -1,23 +1,16 @@
-import { useState, useEffect } from "react";
 import { Dot, X } from "lucide-react";
-
 import { SOCIALS, SITE } from "@consts";
+import { useMobileNav } from "@hooks/useMobileNav";
 
-const MobileNav = ({ email }: { email: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
+export function MobileNav({ email }: { email: string }) {
+  const { isOpen, toggleMenu } = useMobileNav();
 
-  // Clean up body styles when component unmounts
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    // Use a more specific selector for the body to prevent conflicts
-    document.body.style.overflow = !isOpen ? "hidden" : "";
-  };
+  const menuItems = [
+    { href: "/", label: "Home" },
+    { href: "/projects", label: "Work" },
+    { href: "/about", label: "About" },
+    { href: `mailto:${email}`, label: "Contact" },
+  ];
 
   return (
     <div className="md:hidden">
@@ -64,12 +57,7 @@ const MobileNav = ({ email }: { email: string }) => {
           {/* Navigation Links */}
           <nav className="flex-1">
             <ul className="space-y-6 text-white text-4xl font-light">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/projects", label: "Work" },
-                { href: "/about", label: "About" },
-                { href: `mailto:${email}`, label: "Contact" },
-              ].map((link, index) => (
+              {menuItems.map((link, index) => (
                 <li
                   key={link.href}
                   style={{
@@ -124,6 +112,4 @@ const MobileNav = ({ email }: { email: string }) => {
       </div>
     </div>
   );
-};
-
-export default MobileNav;
+}
