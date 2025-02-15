@@ -94,7 +94,7 @@ export function MobileNav({ email }: { email: string }) {
             </div>
             <ul className="flex flex-wrap gap-6 text-white text-lg">
               {SOCIALS.map((SOCIAL, index) => (
-                <li className="flex gap-x-2 text-nowrap">
+                <li className="flex gap-x-2 text-nowrap" key={index}>
                   <a
                     href={SOCIAL.HREF}
                     target="_blank"
