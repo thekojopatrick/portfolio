@@ -53,6 +53,14 @@ export const SOCIALS: Socials = [
     HREF: "https://read.cv/kojopatrick",
   },
   {
+    NAME: "x",
+    HREF: "https://x.com/_kojopatrick",
+  },
+  {
+    NAME: "instagram",
+    HREF: "https://www.instagram.com/kojopatrick_/",
+  },
+  {
     NAME: "github",
     HREF: "https://github.com/thekojopatrick",
   },
