@@ -14,9 +14,9 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Full-Stack Product Engineer | React + TypeScript + AI",
+  TITLE: "Full-Stack Product Engineer | Design + React + TypeScript + AI",
   DESCRIPTION:
-    "I turn complex problems into elegant digital solutions. 4+ years building production-ready web apps with modern stacks (React, Supabase, Framer Motion). Featured on Product Hunt ×2.",
+    "I turn complex problems into elegant digital solutions. 4+ years designing & building apps with modern stacks (Figma, React, Supabase, Framer Motion).",
 };
 
 export const ABOUT: Metadata = {
