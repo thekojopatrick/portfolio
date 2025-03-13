@@ -1,9 +1,9 @@
 import type { Site, Metadata, Socials } from "@types";
 export const GA_TRACKING_ID = "G-QBGYSF417P";
 
-export const SITE_TITLE = "Kojo Patrick • Full-Stack Product Engineer";
+export const SITE_TITLE = "Kojo Patrick • Product Engineer";
 export const SITE_DESCRIPTION =
-  "Bridging design and code to build AI-augmented web experiences. React/TypeScript specialist crafting scalable SaaS solutions for startups. 95% client satisfaction across 10+ shipped products.";
+  "Bridging design and code to build AI-augmented web experiences. React/TypeScript specialist crafting scalable SaaS solutions for startups. 95% client satisfaction across shipped products.";
 
 export const SITE: Site = {
   NAME: "Kojo Patrick",
@@ -14,7 +14,7 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Full-Stack Product Engineer | Design + React + TypeScript + AI",
+  TITLE: "Product Engineer | Design + React + TypeScript + AI",
   DESCRIPTION:
     "I turn complex problems into elegant digital solutions. 4+ years designing & building apps with modern stacks (Figma, React, Supabase, Framer Motion).",
 };
@@ -53,6 +53,10 @@ export const SOCIALS: Socials = [
     HREF: "https://read.cv/kojopatrick",
   },
   {
+    NAME: "dribbble",
+    HREF: "https://dribbble.com/kojopatrick",
+  },
+  {
     NAME: "x",
     HREF: "https://x.com/_kojopatrick",
   },
@@ -68,8 +72,4 @@ export const SOCIALS: Socials = [
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/kojo-patrick-43bb87ab",
   },
-  // {
-  //   NAME: "portfolio",
-  //   HREF: "https://kojopatrick.com/projects", // Direct to project case studies
-  // },
 ];
