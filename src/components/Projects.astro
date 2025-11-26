@@ -13,7 +13,7 @@ const sortedProjects = projects.sort((a, b) => {
 
 <section class="py-24 md:py-32">
   <div
-    class="flex items-baseline justify-between mb-12 border-b border-neutral-200 dark:border-neutral-800 pb-4"
+    class="flex items-baseline justify-between mb-12 border-b border-neutral-200 dark:border-neutral-800 pb-4 reveal"
   >
     <h2 class="font-serif text-3xl md:text-4xl text-neutral-900 dark:text-neutral-50">
       Selected Works
@@ -21,10 +21,10 @@ const sortedProjects = projects.sort((a, b) => {
     <span class="text-sm font-mono text-neutral-500">({projects.length.toString().padStart(2, '0')})</span>
   </div>
 
-  <div class="flex flex-col">
+  <div class="flex flex-col reveal-stagger">
     {
       sortedProjects.map((project) => (
-        <details name="projects" class="group border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
+        <details name="projects" class="group border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300 reveal-child">
           <summary class="flex flex-col md:flex-row md:items-baseline justify-between py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h3 class="font-serif text-2xl md:text-3xl text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 group-open:text-neutral-900 dark:group-open:text-neutral-50 group-hover:italic group-open:italic transition-all duration-300">
               {project.title}

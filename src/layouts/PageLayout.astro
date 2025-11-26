@@ -41,5 +41,34 @@ const { title, description } = Astro.props;
     </main>
     <Footer />
     <ThemeToggle />
+    <script>
+      import { animate, inView, stagger } from "motion";
+
+      const setupAnimations = () => {
+        // Global Scroll Reveal
+        inView(".reveal", ({ target }) => {
+          animate(
+            target,
+            { opacity: [0, 1], y: [20, 0], filter: ["blur(10px)", "blur(0px)"] },
+            { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
+          );
+        });
+
+        // Staggered list items
+        inView(".reveal-stagger", ({ target }) => {
+          animate(
+            target.querySelectorAll(".reveal-child"),
+            { opacity: [0, 1], y: [20, 0] },
+            { delay: stagger(0.1), duration: 0.5, easing: [0.17, 0.55, 0.55, 1] }
+          );
+        });
+      };
+
+      // Initial load
+      setupAnimations();
+
+      // View Transitions
+      document.addEventListener("astro:page-load", setupAnimations);
+    </script>
   </body>
 </html>
