@@ -1,18 +1,14 @@
-```
 ---
-import { getCollection } from "astro:content";
+
 import Link from "./Link.astro";
+import  { projects } from "@data/projects";
 
-const projects = (await getCollection("projects")).sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
-);
-
-const renderedProjects = await Promise.all(
-  projects.map(async (project) => {
-    const { Content } = await project.render();
-    return { ...project, Content };
-  })
-);
+// Sort projects if they have dates, otherwise use as-is
+const sortedProjects = projects.sort((a, b) => {
+  // Add date field to your Project interface if needed
+  // For now, just use the array as-is
+  return 0;
+});
 ---
 
 <section class="py-24 md:py-32">
@@ -27,31 +23,25 @@ const renderedProjects = await Promise.all(
 
   <div class="flex flex-col">
     {
-      renderedProjects.map((project) => (
+      sortedProjects.map((project) => (
         <details name="projects" class="group border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
           <summary class="flex flex-col md:flex-row md:items-baseline justify-between py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h3 class="font-serif text-2xl md:text-3xl text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 group-open:text-neutral-900 dark:group-open:text-neutral-50 group-hover:italic group-open:italic transition-all duration-300">
-              {project.data.title}
+              {project.title}
             </h3>
             <div class="flex gap-8 md:gap-24 text-sm md:text-base font-mono text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-neutral-300 group-open:text-neutral-900 dark:group-open:text-neutral-300 transition-colors duration-300 mt-2 md:mt-0">
-              <span class="w-32">{project.data.description.slice(0, 30)}...</span>
-              <span>{new Date(project.data.date).getFullYear()}</span>
+              <span class="w-56">{project.description.slice(0, 50)}...</span>
+              <span>{project.category}</span>
             </div>
           </summary>
           <div class="pb-12 pt-4 prose prose-neutral dark:prose-invert max-w-none animate-in fade-in slide-in-from-top-4 duration-500">
-            <div class="flex gap-4 mb-8 not-prose">
-              {project.data.demoURL && (
-                <Link href={project.data.demoURL} external underline={true} className="text-sm font-medium">
-                  Live Demo
-                </Link>
-              )}
-              {project.data.repoURL && (
-                <Link href={project.data.repoURL} external underline={true} className="text-sm font-medium">
-                  Source Code
-                </Link>
-              )}
+            <img src={project.image.src} alt={project.image.alt} class="w-full rounded-lg mb-6" />
+            <p>{project.description}</p>
+            <div class="flex gap-4 mt-6 not-prose">
+              <Link href={project.href} underline={true} className="text-sm font-medium">
+                View Project
+              </Link>
             </div>
-            <project.Content />
           </div>
         </details>
       ))
@@ -68,4 +58,3 @@ const renderedProjects = await Promise.all(
     </Link>
   </div>
 </section>
-```
