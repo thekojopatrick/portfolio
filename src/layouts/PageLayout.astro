@@ -3,7 +3,7 @@ import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import ThemeToggle from "@components/ThemeToggle.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { SITE } from "@consts";
 
 type Props = {
@@ -12,13 +12,14 @@ type Props = {
 };
 
 const { title, description } = Astro.props;
+const rybbitSiteId = "b7e1d3e0f1be";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <Head title={`${SITE.NAME} | ${title}`} description={description} />
-    <ViewTransitions />
+    <ClientRouter />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBGYSF417P"
     ></script><script id="google-analytics">
@@ -32,6 +33,12 @@ const { title, description } = Astro.props;
         page_path: window.location.pathname,
       });
     </script>
+    <!-- Rybbit -->
+    <script
+      src="https://app.rybbit.io/api/script.js"
+      data-site-id={rybbitSiteId}
+      async
+      defer></script>
   </head>
 
   <body>
@@ -49,8 +56,12 @@ const { title, description } = Astro.props;
         inView(".reveal", ({ target }) => {
           animate(
             target,
-            { opacity: [0, 1], y: [20, 0], filter: ["blur(10px)", "blur(0px)"] },
-            { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
+            {
+              opacity: [0, 1],
+              y: [20, 0],
+              filter: ["blur(10px)", "blur(0px)"],
+            },
+            { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] },
           );
         });
 
@@ -59,7 +70,11 @@ const { title, description } = Astro.props;
           animate(
             target.querySelectorAll(".reveal-child"),
             { opacity: [0, 1], y: [20, 0] },
-            { delay: stagger(0.1), duration: 0.5, easing: [0.17, 0.55, 0.55, 1] }
+            {
+              delay: stagger(0.1),
+              duration: 0.5,
+              easing: [0.17, 0.55, 0.55, 1],
+            },
           );
         });
       };
@@ -69,6 +84,19 @@ const { title, description } = Astro.props;
 
       // View Transitions
       document.addEventListener("astro:page-load", setupAnimations);
+
+      // In a client-side script, perhaps in your common layout or a global script file
+      document.addEventListener("astro:after-swap", () => {
+        if (window.rybbit) {
+          window.rybbit.pageview();
+        }
+      });
+
+      document.getElementById("contact-me")?.addEventListener("click", () => {
+        if (window.rybbit) {
+          window.rybbit.event("contact_me_click", { source: "Header.astro" });
+        }
+      });
     </script>
   </body>
 </html>

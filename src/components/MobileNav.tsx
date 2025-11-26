@@ -13,7 +13,7 @@ export function MobileNav({ email }: { email: string }) {
   ];
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden ">
       {/* Menu Button */}
       <button
         onClick={toggleMenu}
@@ -28,7 +28,8 @@ export function MobileNav({ email }: { email: string }) {
 
       {/* Fullscreen Menu */}
       <div
-        className={`fixed inset-0 bg-zinc-900 transition-all duration-500 ease-in-out z-40 ${
+        id="mobile-nav"
+        className={`fixed inset-0 bg-zinc-900 transition-all duration-500 ease-in-out z-[999] ${
           isOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
@@ -42,21 +43,21 @@ export function MobileNav({ email }: { email: string }) {
         >
           {/* Header */}
           <div className="flex justify-between items-center text-zinc-500 mb-8">
-            <span className="uppercase text-sm tracking-wide">Navigation</span>
+            <span className="uppercase text-sm tracking-wide">Menu</span>
             <button
               onClick={toggleMenu}
               className="p-2 -m-2"
               aria-label="Close menu"
             >
-              <div className="bg-amber-500 rounded-full p-2 transition-transform hover:scale-110">
-                <X className="w-5 h-5 text-white" />
+              <div className="bg-gray-50 rounded-full p-2 transition-transform hover:scale-110">
+                <X className="w-5 h-5 text-black" />
               </div>
             </button>
           </div>
 
           {/* Navigation Links */}
           <nav className="flex-1">
-            <ul className="space-y-6 text-white text-4xl font-light">
+            <ul className="space-y-6 text-white text-4xl font-light font-serif">
               {menuItems.map((link, index) => (
                 <li
                   key={link.href}
