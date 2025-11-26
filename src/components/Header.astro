@@ -5,42 +5,39 @@ import Container from "./Container.astro";
 import { MobileNav } from "./MobileNav";
 ---
 
-<header>
-  <Container className="px-2 md:px-5">
-    <nav class="flex items-center justify-between py-4">
-      <Link href="/" underline={false}>
-        <div class="font-semibold text-lg tracking-tight">
-          {SITE.NAME}
-        </div>
-      </Link>
-      <div class="flex gap-4 items-center">
-        <div class="hidden md:flex gap-6 text-sm font-medium text-neutral-600">
-          <Link
-            href="/about"
-            underline={false}
-            className="hover:text-neutral-900 transition-colors"
-          >
-            story
-          </Link>
-          <Link
-            href="/projects"
-            underline={false}
-            className="hover:text-neutral-900 transition-colors"
-          >
-            projects
-          </Link>
-        </div>
-        <div class="hidden md:block">
-          <Link
-            href={`mailto:${SITE.EMAIL}`}
-            underline={false}
-            className="px-4 py-2 text-sm font-medium bg-neutral-900 text-white rounded-full hover:bg-neutral-800 transition-colors"
-          >
-            Say Hello
-          </Link>
-        </div>
-        <MobileNav client:load email={SITE.EMAIL} />
+<header
+  class="mix-blend-difference z-50 fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-start pointer-events-none"
+>
+  <div class="pointer-events-auto">
+    <Link href="/" underline={false} className="block group">
+      <div
+        class="font-serif text-2xl md:text-3xl leading-none tracking-tight text-white group-hover:italic transition-all duration-300"
+      >
+        {SITE.NAME.toLowerCase()}.
       </div>
-    </nav>
-  </Container>
+    </Link>
+  </div>
+
+  <nav class="pointer-events-auto flex flex-col items-end gap-2 md:gap-4">
+    <div
+      class="flex flex-col items-end gap-1 text-sm md:text-base font-medium text-white/90"
+    >
+      <Link
+        href="/about"
+        underline={false}
+        className="hover:italic transition-all">index</Link
+      >
+      <Link
+        href="/projects"
+        underline={false}
+        className="hover:italic transition-all">archive</Link
+      >
+      <Link
+        href={`mailto:${SITE.EMAIL}`}
+        underline={false}
+        className="hover:italic transition-all">contact</Link
+      >
+    </div>
+    <MobileNav client:load email={SITE.EMAIL} />
+  </nav>
 </header>

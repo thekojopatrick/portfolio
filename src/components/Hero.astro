@@ -56,31 +56,31 @@ const roles = [
     </p>
 
     <!-- Skills chips with technical focus -->
-    <div class="flex flex-wrap gap-2 py-4">
-      {
-        roles.map((skill) => (
-          <span class="px-3 py-1.5 text-xs font-medium bg-zinc-100 rounded-full">
-            {skill}
-          </span>
-        ))
-      }
-    </div>
-
-    <!-- Action buttons with clear hierarchy -->
-    <div class="flex flex-wrap gap-4 items-center">
-      <a href="/projects" class="">
-        <ShimmerButton className="text-sm"> View Case Studies → </ShimmerButton>
-      </a>
-      <div class="flex items-center gap-2 text-zinc-500">
-        <span class="relative flex h-3 w-3">
-          <span
-            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
-          ></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"
-          ></span>
-        </span>
-        <span class="text-sm">Available for contracts & full-time roles</span>
+    <section class="min-h-[80vh] flex flex-col justify-end pb-12 md:pb-24">
+      <div class="space-y-6 md:space-y-12">
+        <h1
+          class="font-serif text-display md:text-display-lg leading-[0.9] tracking-tighter text-neutral-900"
+        >
+          Crafting digital <br />
+          <span class="italic text-neutral-500">experiences</span> with <br />
+          precision & soul.
+        </h1>
+        <div
+          class="flex flex-col md:flex-row gap-8 md:gap-24 items-start md:items-end max-w-4xl"
+        >
+          <p
+            class="text-lg md:text-xl leading-relaxed text-neutral-600 max-w-md text-balance"
+          >
+            A multidisciplinary designer and developer focused on creating
+            emotive, high-end web interactions for forward-thinking brands.
+          </p>
+          <div class="flex gap-4 text-sm font-medium tracking-wide uppercase">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse mt-1.5"
+            ></span>
+            <span>Available for <br /> new commissions</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </section>
