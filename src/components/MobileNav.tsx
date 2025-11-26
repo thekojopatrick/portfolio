@@ -13,7 +13,7 @@ export function MobileNav({ email }: { email: string }) {
   ];
 
   return (
-    <div className="md:hidden ">
+    <div className="hidden ">
       {/* Menu Button */}
       <button
         onClick={toggleMenu}
