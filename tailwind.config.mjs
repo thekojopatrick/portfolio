@@ -53,6 +53,20 @@ export default {
         wider: "0.05em",
         widest: "0.1em",
       },
+      keyframes: {
+        "marquee-horizontal": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+      },
+      animation: {
+        "marquee-horizontal": "marquee-horizontal var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
