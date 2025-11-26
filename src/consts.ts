@@ -49,10 +49,6 @@ export const SOCIALS: Socials = [
     HREF: "https://kojopatrick.com/kojo-patrick-resume.pdf",
   },
   {
-    NAME: "read-cv",
-    HREF: "https://read.cv/kojopatrick",
-  },
-  {
     NAME: "dribbble",
     HREF: "https://dribbble.com/kojopatrick",
   },
