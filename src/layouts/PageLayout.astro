@@ -3,6 +3,7 @@ import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import ThemeToggle from "@components/ThemeToggle.astro";
+import { ViewTransitions } from "astro:transitions";
 import { SITE } from "@consts";
 
 type Props = {
@@ -17,6 +18,7 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <Head title={`${SITE.NAME} | ${title}`} description={description} />
+    <ViewTransitions />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBGYSF417P"
     ></script><script id="google-analytics">
@@ -34,7 +36,7 @@ const { title, description } = Astro.props;
 
   <body>
     <Header />
-    <main>
+    <main class="pt-32">
       <slot />
     </main>
     <Footer />
