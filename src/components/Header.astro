@@ -7,31 +7,40 @@ import { MobileNav } from "./MobileNav";
 
 <header>
   <Container className="px-2 md:px-5">
-    <nav
-      class="flex flex-wrap max-w-3xl shadow-sm mx-auto gap-y-2 justify-between border border-zinc-200 rounded-full px-4 md:pr-0 md:pl-4 py-2 items-center bg-white/80 md:backdrop-blur-sm md:animate"
-    >
+    <nav class="flex items-center justify-between py-4">
       <Link href="/" underline={false}>
-        <div class="font-medium text-sm">
+        <div class="font-semibold text-lg tracking-tight">
           {SITE.NAME}
         </div>
       </Link>
-      <nav class="flex gap-2 items-center">
-        <div class="hidden md:block space-x-2">
-          <Link href="/about" underline={false}> story </Link>
-          <Link href="/projects" underline={false}> projects </Link>
+      <div class="flex gap-4 items-center">
+        <div class="hidden md:flex gap-6 text-sm font-medium text-neutral-600">
+          <Link
+            href="/about"
+            underline={false}
+            className="hover:text-neutral-900 transition-colors"
+          >
+            story
+          </Link>
+          <Link
+            href="/projects"
+            underline={false}
+            className="hover:text-neutral-900 transition-colors"
+          >
+            projects
+          </Link>
         </div>
         <div class="hidden md:block">
           <Link
-            button={true}
             href={`mailto:${SITE.EMAIL}`}
             underline={false}
-            className="px-4 py-2 ml-2 rounded-full"
+            className="px-4 py-2 text-sm font-medium bg-neutral-900 text-white rounded-full hover:bg-neutral-800 transition-colors"
           >
-            say <span class="font-serif italic">"Hello!"</span>
+            Say Hello
           </Link>
         </div>
         <MobileNav client:load email={SITE.EMAIL} />
-      </nav>
+      </div>
     </nav>
   </Container>
 </header>

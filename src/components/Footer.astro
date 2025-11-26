@@ -9,126 +9,65 @@ import ShimmerButton from "./ui/shimmer-button";
 const today = new Date();
 ---
 
-<footer class="space-y-6 px-4 md:px-5">
-  <section class="animate space-y-4">
-    <Container size="lg">
-      <h5 class="font-semibold text-md md:text-lg text-black">Let's Connect</h5>
-      <article>
-        <p>
-          Whether you're building a company, agency, or startup—or assembling a
-          dynamic team or If you're an investor or sponsor seeking scalable,
-          innovative solutions.I'm here! If you want to get in touch with me
-          about something or just to say hi, reach out on social media or send
-          me an email.
+<footer class="px-4 md:px-5">
+  <Container size="lg">
+    <div
+      class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+    >
+      <div class="space-y-2">
+        <h5 class="font-semibold text-lg text-neutral-900">Let's Connect</h5>
+        <p class="text-neutral-600 max-w-md text-sm leading-relaxed">
+          Open to new opportunities and collaborations. Feel free to reach out.
         </p>
-        <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-          <ShimmerButton className="mb-5 rounded-full py-1">
-            Connect
-          </ShimmerButton>
-        </Link>
-      </article>
-      <ul class="flex flex-wrap gap-2">
-        {
-          SOCIALS.map((SOCIAL, index) => (
-            <li class="flex gap-x-2 text-nowrap">
+        <div class="flex gap-4 pt-2">
+          {
+            SOCIALS.map((SOCIAL) => (
               <Link
                 href={SOCIAL.HREF}
                 external
                 aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                className="text-neutral-500 hover:text-neutral-900 text-sm transition-colors"
               >
                 {SOCIAL.NAME}
               </Link>
-              {index !== SOCIALS.length - 1 && "/"}
-            </li>
-          ))
-        }
-      </ul>
-    </Container>
-  </section>
-  <section class="py-5 animate">
-    <Container size="lg">
-      <div class="flex items-center justify-center sm:justify-end">
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="flex flex-col items-start md:items-end gap-2">
+        <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+          <button
+            class="px-5 py-2 bg-neutral-900 text-white text-sm font-medium rounded-full hover:bg-neutral-800 transition-colors"
+          >
+            Get in Touch
+          </button>
+        </Link>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 pt-6 border-t border-neutral-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500"
+    >
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"
+          ></span>
+        </span>
+        <span>Available for work</span>
+      </div>
+      <div class="flex gap-4">
+        <span>&copy; {today.getFullYear()} {SITE.NAME}.</span>
         <button
           id="back-to-top"
-          aria-label="Back to top of page"
-          class="group flex w-fit p-1.5 gap-1.5 text-sm items-center border rounded hover:bg-black/5 border-black/15 transition-colors duration-300 ease-in-out"
+          class="hover:text-neutral-900 transition-colors">Back to Top</button
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="stroke-current group-hover:stroke-black rotate-90"
-          >
-            <line
-              x1="19"
-              y1="12"
-              x2="5"
-              y2="12"
-              class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 ease-in-out"
-            ></line>
-            <polyline
-              points="12 19 5 12 12 5"
-              class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"
-            ></polyline>
-          </svg>
-          <div
-            class="w-full group-hover:text-black transition-colors duration-300 ease-in-out"
-          >
-            Back to top
-          </div>
-        </button>
       </div>
-    </Container>
-  </section>
-  <div
-    class="whitespace-nowrap border-t border-black/10 my-5 max-w-screen-lg mx-auto animate"
-  >
-  </div>
-  <section class="overflow-hidden animate pb-6">
-    <Container size="lg">
-      <div
-        class="flex items-center justify-between flex-wrap sm:grid grid-cols-1 sm:grid-cols-2 gap-3"
-      >
-        <div class="flex flex-col items-center sm:items-start">
-          <a
-            href="/"
-            class="flex items-center gap-1 w-fit font-semibold text-current hover:text-black transition-colors duration-300 ease-in-out"
-          >
-            <Image
-              src="/projects/profile-image.jpg"
-              width={40}
-              height={40}
-              alt={"Profile picture"}
-            />
-            {SITE.NAME}
-          </a>
-        </div>
-        <div class="flex gap-2 justify-center sm:justify-end items-center">
-          <span class="relative flex h-3 w-3">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300"
-            ></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
-            ></span>
-          </span>
-          All Systems Working
-        </div>
-      </div>
-      <div class="flex flex-wrap items-center justify-between">
-        <span
-          >Accra, Ghana
-          {today.toLocaleTimeString()}
-          {formatDate(today)}</span
-        >
-        <span>&copy; {today.getFullYear()} Kojo Patrick.</span>
-      </div>
-    </Container>
-  </section>
+    </div>
+  </Container>
 </footer>
 
 <script is:inline>
