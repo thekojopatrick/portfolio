@@ -72,13 +72,17 @@ const roles = [
 
         <div class="flex gap-2 flex-wrap">
           {
-            ["AI Engineering", "Product Design", "System Architecture"].map(
-              (tag) => (
-                <span class="px-3 py-1 text-xs font-mono border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-default">
-                  {tag}
-                </span>
-              ),
-            )
+            [
+              "AI Engineering",
+              "Product Design",
+              "Website Development",
+              "Automation",
+              "Business Transformation",
+            ].map((tag) => (
+              <span class="px-3 py-1 text-xs font-mono border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-default">
+                {tag}
+              </span>
+            ))
           }
         </div>
       </div>
