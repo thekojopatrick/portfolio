@@ -14,73 +14,44 @@ const roles = [
 ];
 ---
 
-<section
-  class="min-h-[50vh] flex flex-col items-center justify-center text-left md:text-center px-4 py-20"
->
-  <div class="max-w-3xl mx-auto space-y-4">
-    <!-- Simplified header with stronger value prop -->
-    <div class="flex items-center gap-3 text-2xl sm:text-3xl font-medium">
-      <span class="has-tooltip group relative">
-        🇬🇭
-        <span class="tooltip">Building global solutions from Ghana</span>
-      </span>
-      <img
-        src="/profile-image.jpg"
-        alt="Profile"
-        class="object-cover w-20"
-        sizes="40px"
-      />
-      <h1 class="font-serif italic">Kojo Patrick</h1>
-    </div>
+<section class="min-h-[85vh] flex flex-col justify-center py-24 md:py-32 relative overflow-hidden">
+  <div class="space-y-8 md:space-y-12 z-10">
+    <!-- Semantic H1 for SEO -->
+    <h1 class="font-serif text-display md:text-display-lg leading-[0.9] tracking-tighter text-neutral-900 dark:text-neutral-50">
+      Designing & Building <br />
+      <span class="italic text-neutral-500 dark:text-neutral-400">Intelligent Systems.</span>
+    </h1>
 
-    <!-- Punchier headline with technical specificity -->
-    <h2 class="text-3xl sm:text-5xl font-bold leading-tight text-left">
-      Product Designer & Developer
-      <br />
-      <span class="text-zinc-500 font-normal text-2xl tracking-tight hidden">
-        Bridging <span class="italic font-serif">Figma</span> to <span
-          class="italic font-serif">React</span
-        > with
-      </span>
-      <span
-        class="bg-gradient-to-r hidden from-neutral-800 to-amber-500 bg-clip-text text-transparent text-2xl"
-      >
-        AI-Augmented Speed
-      </span>
-    </h2>
+    <div class="flex flex-col md:flex-row gap-8 md:gap-24 items-start md:items-end max-w-5xl">
+      <div class="space-y-6 max-w-xl">
+        <h2 class="text-xl md:text-2xl font-medium text-neutral-900 dark:text-neutral-50 leading-relaxed">
+          I'm Kojo Patrick, a Product Engineer focused on crafting <span class="border-b border-neutral-300 dark:border-neutral-700">AI Assistants</span> and <span class="border-b border-neutral-300 dark:border-neutral-700">Chat Applications</span> that feel human.
+        </h2>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed text-balance">
+          Bridging the gap between complex LLM capabilities and intuitive user experiences. I specialize in building scalable, design-driven software that solves real problems.
+        </p>
+      </div>
 
-    <!-- Metrics-driven subheading -->
-    <p class="text-base text-zinc-600 text-left">
-      Shipped production apps • 95% client satisfaction • 30% faster iterations
-      via AI tooling
-    </p>
-
-    <!-- Skills chips with technical focus -->
-    <section class="min-h-[80vh] flex flex-col justify-end pb-12 md:pb-24">
-      <div class="space-y-6 md:space-y-12">
-        <h1
-          class="font-serif text-display md:text-display-lg leading-[0.9] tracking-tighter text-neutral-900"
-        >
-          Crafting digital <br />
-          <span class="italic text-neutral-500">experiences</span> with <br />
-          precision & soul.
-        </h1>
-        <div
-          class="flex flex-col md:flex-row gap-8 md:gap-24 items-start md:items-end max-w-4xl"
-        >
-          <p
-            class="text-lg md:text-xl leading-relaxed text-neutral-600 max-w-md text-balance"
-          >
-            A multidisciplinary designer and developer focused on creating
-            emotive, high-end web interactions for forward-thinking brands.
-          </p>
-          <div class="flex gap-4 text-sm font-medium tracking-wide uppercase">
-            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse mt-1.5"
-            ></span>
-            <span>Available for <br /> new commissions</span>
-          </div>
+      <div class="flex flex-col gap-4 min-w-fit">
+        <div class="flex gap-3 items-center text-sm font-medium tracking-wide uppercase text-neutral-500 dark:text-neutral-400">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          <span>Available for new projects</span>
+        </div>
+        
+        <div class="flex gap-2 flex-wrap">
+           {["AI Engineering", "Product Design", "System Architecture"].map((tag) => (
+             <span class="px-3 py-1 text-xs font-mono border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400">
+               {tag}
+             </span>
+           ))}
         </div>
       </div>
-    </section>
+    </div>
   </div>
+  
+  <!-- Subtle background decoration -->
+  <div class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-neutral-200/20 dark:bg-neutral-800/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 </section>
