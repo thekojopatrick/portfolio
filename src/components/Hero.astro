@@ -15,72 +15,83 @@ const roles = [
 ---
 
 <section
-  class="min-h-[50vh] flex flex-col items-center justify-center text-left md:text-center px-4 py-20"
+  id="hero"
+  class="min-h-[85vh] flex flex-col justify-center py-24 md:py-32 px-6 md:px-12 relative overflow-hidden"
 >
-  <div class="max-w-3xl mx-auto space-y-4">
-    <!-- Simplified header with stronger value prop -->
-    <div class="flex items-center gap-3 text-2xl sm:text-3xl font-medium">
-      <span class="has-tooltip group relative">
-        🇬🇭
-        <span class="tooltip">Building global solutions from Ghana</span>
-      </span>
-      <img
-        src="/profile-image.jpg"
-        alt="Profile"
-        class="object-cover w-20"
-        sizes="40px"
-      />
-      <h1 class="font-serif italic">Kojo Patrick</h1>
-    </div>
-
-    <!-- Punchier headline with technical specificity -->
-    <h2 class="text-3xl sm:text-5xl font-bold leading-tight text-left">
-      Product Designer & Developer
-      <br />
-      <span class="text-zinc-500 font-normal text-2xl tracking-tight hidden">
-        Bridging <span class="italic font-serif">Figma</span> to <span
-          class="italic font-serif">React</span
-        > with
-      </span>
-      <span
-        class="bg-gradient-to-r hidden from-neutral-800 to-amber-500 bg-clip-text text-transparent text-2xl"
+  <div class="space-y-8 md:space-y-12">
+    <!-- Semantic H1 for SEO -->
+    <h1
+      class="font-serif text-display md:text-display-lg leading-[0.9] tracking-tighter text-neutral-900 dark:text-neutral-50 reveal"
+    >
+      Designing & Building <br />
+      <span class="italic text-neutral-500 dark:text-neutral-400"
+        >Intelligent Systems.</span
       >
-        AI-Augmented Speed
-      </span>
-    </h2>
+    </h1>
 
-    <!-- Metrics-driven subheading -->
-    <p class="text-base text-zinc-600 text-left">
-      Shipped production apps • 95% client satisfaction • 30% faster iterations
-      via AI tooling
-    </p>
-
-    <!-- Skills chips with technical focus -->
-    <div class="flex flex-wrap gap-2 py-4">
-      {
-        roles.map((skill) => (
-          <span class="px-3 py-1.5 text-xs font-medium bg-zinc-100 rounded-full">
-            {skill}
+    <div
+      class="flex flex-col md:flex-row gap-8 md:gap-24 items-start md:items-end max-w-5xl reveal"
+      style="transition-delay: 100ms;"
+    >
+      <div class="space-y-6 w-full lg:max-w-xl">
+        <h2
+          class="text-xl md:text-2xl font-medium text-neutral-900 dark:text-neutral-50 leading-relaxed"
+        >
+          I'm <span class="italic font-serif">Kojo Patrick</span>, product
+          engineer helping businesses build
+          <span class="border-b border-neutral-300 dark:border-neutral-700">
+            AI Assistants
           </span>
-        ))
-      }
-    </div>
+          and simple,
+          <span class="border-b border-neutral-300 dark:border-neutral-700">
+            human-centered digital products.
+          </span>
+        </h2>
+        <p
+          class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed text-balance"
+        >
+          I make AI easy for businesses by turning complex LLM capabilities into
+          simple, intuitive experiences. I specialize in building scalable,
+          design-driven software that solves real problems.
+        </p>
+      </div>
 
-    <!-- Action buttons with clear hierarchy -->
-    <div class="flex flex-wrap gap-4 items-center">
-      <a href="/projects" class="">
-        <ShimmerButton className="text-sm"> View Case Studies → </ShimmerButton>
-      </a>
-      <div class="flex items-center gap-2 text-zinc-500">
-        <span class="relative flex h-3 w-3">
-          <span
-            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
-          ></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"
-          ></span>
-        </span>
-        <span class="text-sm">Available for contracts & full-time roles</span>
+      <div class="flex flex-col gap-4 w-full lg:max-w-xl">
+        <div
+          class="flex gap-3 items-center text-sm font-medium tracking-wide uppercase text-neutral-500 dark:text-neutral-400"
+        >
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+            ></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"
+            ></span>
+          </span>
+          <span>Available for new projects</span>
+        </div>
+
+        <div class="flex gap-2 flex-wrap">
+          {
+            [
+              "AI Engineering",
+              "Product Design",
+              "Website Development",
+              "Automation",
+              "Business Transformation",
+            ].map((tag) => (
+              <span class="px-3 py-1 text-xs font-mono border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-default">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- Subtle background decoration -->
+  <div
+    class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-neutral-200/20 dark:bg-neutral-800/20 rounded-full blur-3xl -z-10 pointer-events-none animate-pulse duration-[4000ms]"
+  >
   </div>
 </section>

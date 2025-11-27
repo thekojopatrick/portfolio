@@ -1,22 +1,22 @@
 import type { Site, Metadata, Socials } from "@types";
 export const GA_TRACKING_ID = "G-QBGYSF417P";
 
-export const SITE_TITLE = "Kojo Patrick • Product Engineer";
+export const SITE_TITLE = "Kojo Patrick • Product Engineer & AI Systems Designer";
 export const SITE_DESCRIPTION =
-  "Bridging design and code to build AI-augmented web experiences. React/TypeScript specialist crafting scalable SaaS solutions for startups. 95% client satisfaction across shipped products.";
+  "Product Engineer specializing in designing and building intelligent systems. Focused on AI Assistants, Chat Applications, and scalable SaaS architectures.";
 
 export const SITE: Site = {
   NAME: "Kojo Patrick",
   EMAIL: "kojo.obengpatrick@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 3,
-  NUM_WORKS_ON_HOMEPAGE: 3, // Showcase freelance + studio work
-  NUM_PROJECTS_ON_HOMEPAGE: 4, // Include paused projects as case studies
+  NUM_WORKS_ON_HOMEPAGE: 3,
+  NUM_PROJECTS_ON_HOMEPAGE: 4,
 };
 
 export const HOME: Metadata = {
-  TITLE: "Product Engineer | Design + React + TypeScript + AI",
+  TITLE: "Product Engineer | AI Systems + Design + Engineering",
   DESCRIPTION:
-    "I turn complex problems into elegant digital solutions. 4+ years designing & building apps with modern stacks (Figma, React, Supabase, Framer Motion).",
+    "I build intelligent interfaces and scalable systems. Specializing in AI Assistants, Chat UIs, and bridging the gap between design and engineering.",
 };
 
 export const ABOUT: Metadata = {
@@ -47,10 +47,6 @@ export const SOCIALS: Socials = [
   {
     NAME: "resume",
     HREF: "https://kojopatrick.com/kojo-patrick-resume.pdf",
-  },
-  {
-    NAME: "read-cv",
-    HREF: "https://read.cv/kojopatrick",
   },
   {
     NAME: "dribbble",
