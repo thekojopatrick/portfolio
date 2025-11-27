@@ -63,7 +63,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
                   className="overflow-hidden"
                 >
                   <div className="pb-12 pt-4 prose prose-neutral dark:prose-invert max-w-none">
-                    <div className="relative h-full aspect-[1/1] md:aspect-[2/1] rounded-xl bg-zinc-100 dark:bg-zinc-800 overflow-hidden border mb-6">
+                    <div className="relative h-full aspect-[1/1] md:aspect-[16/9] rounded-xl bg-zinc-100 dark:bg-zinc-800 overflow-hidden border mb-6">
                       <img
                         src={project.image.src}
                         alt={project.image.alt}

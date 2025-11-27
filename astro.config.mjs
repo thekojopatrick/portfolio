@@ -11,4 +11,7 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://kojopatrick.com",
   integrations: [mdx(), sitemap(), tailwind(), react()],
+  server: {
+    //allowedHosts: ["grown-cattle-mature.ngrok-free.app"],
+  },
 });
