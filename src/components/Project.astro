@@ -22,7 +22,7 @@ const {
 
 <div class="max-w-7xl mx-auto">
   <div class="mb-6">
-    <p class="text-gray-600 max-w-2xl">
+    <p class="text-gray-600 dark:text-gray-400 max-w-2xl">
       {description}
     </p>
   </div>
@@ -33,7 +33,7 @@ const {
         {tags.map((tag, index) => (
           <span
             id={`${index}`}
-            class="text-gray-600  bg-zinc-100 px-1 rounded-full font-medium text-sm"
+            class="text-gray-600 dark:text-gray-400 bg-zinc-100 dark:bg-zinc-800 px-1 rounded-full font-medium text-sm"
           >
             {tag}
           </span>
@@ -43,12 +43,14 @@ const {
   }
 
   <div class="relative">
-    <div class="relative bg-white p-2 rounded-xl">
+    <div class="relative bg-white p-2 rounded-xl dark:bg-zinc-800">
       <img src={coverImageSrc} alt={imageAlt} class="w-full rounded-lg" />
       {
         tagline && (
           <div class="absolute bottom-8 left-0 right-0 text-center sr-only">
-            <span class="text-sm text-zinc-600">{tagline}</span>
+            <span class="text-sm text-zinc-600 dark:text-zinc-400">
+              {tagline}
+            </span>
           </div>
         )
       }

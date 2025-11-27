@@ -28,7 +28,7 @@ import { Image } from "astro:assets";
           },
         ].map((item) => (
           <div
-            class="flex h-full w-60 flex-1 flex-col justify-between items-center rounded-md border bg-gray-100"
+            class="flex h-full w-60 flex-1 flex-col justify-between items-center rounded-md border overflow-hidden bg-gray-100"
             id={`item-${item.alt}`}
           >
             <Image src={item.src} alt={item.alt} width={400} height={300} />
@@ -57,7 +57,7 @@ import { Image } from "astro:assets";
           },
         ].map((item) => (
           <div
-            class="flex h-full w-60 flex-1 flex-col justify-between items-center rounded-md border bg-gray-100"
+            class="flex h-full w-60 flex-1 flex-col justify-between items-center rounded-md border bg-gray-100 overflow-hidden"
             id={`item-${item.alt}`}
           >
             <Image src={item.src} alt={item.alt} width={400} height={300} />

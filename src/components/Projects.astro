@@ -1,7 +1,7 @@
 ---
-
 import Link from "./Link.astro";
-import  { projects } from "@data/projects";
+import { projects } from "@data/projects";
+import { ProjectList } from "./ProjectList";
 
 // Sort projects if they have dates, otherwise use as-is
 const sortedProjects = projects.sort((a, b) => {
@@ -15,38 +15,17 @@ const sortedProjects = projects.sort((a, b) => {
   <div
     class="flex items-baseline justify-between mb-12 border-b border-neutral-200 dark:border-neutral-800 pb-4 reveal"
   >
-    <h2 class="font-serif text-3xl md:text-4xl text-neutral-900 dark:text-neutral-50">
+    <h2
+      class="font-serif text-3xl md:text-4xl text-neutral-900 dark:text-neutral-50"
+    >
       Selected Works
     </h2>
-    <span class="text-sm font-mono text-neutral-500">({projects.length.toString().padStart(2, '0')})</span>
+    <span class="text-sm font-mono text-neutral-500"
+      >({projects.length.toString().padStart(2, "0")})</span
+    >
   </div>
 
-  <div class="flex flex-col reveal-stagger">
-    {
-      sortedProjects.map((project) => (
-        <details name="projects" class="group border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300 reveal-child">
-          <summary class="flex flex-col md:flex-row md:items-baseline justify-between py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-            <h3 class="font-serif text-2xl md:text-3xl text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 group-open:text-neutral-900 dark:group-open:text-neutral-50 group-hover:italic group-open:italic transition-all duration-300">
-              {project.title}
-            </h3>
-            <div class="flex gap-8 md:gap-24 text-sm md:text-base font-mono text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-neutral-300 group-open:text-neutral-900 dark:group-open:text-neutral-300 transition-colors duration-300 mt-2 md:mt-0">
-              <span class="w-56">{project.description.slice(0, 50)}...</span>
-              <span>{project.category}</span>
-            </div>
-          </summary>
-          <div class="pb-12 pt-4 prose prose-neutral dark:prose-invert max-w-none animate-in fade-in slide-in-from-top-4 duration-500">
-            <img src={project.image.src} alt={project.image.alt} class="w-full rounded-lg mb-6" />
-            <p>{project.description}</p>
-            <div class="flex gap-4 mt-6 not-prose">
-              <Link href={project.href} underline={true} className="text-sm font-medium">
-                View Project
-              </Link>
-            </div>
-          </div>
-        </details>
-      ))
-    }
-  </div>
+  <ProjectList client:visible projects={sortedProjects} />
 
   <div class="mt-12 text-center md:text-right">
     <Link
