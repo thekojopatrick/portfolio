@@ -2,9 +2,6 @@
 import { SITE, SOCIALS } from "@consts";
 import Link from "./Link.astro";
 import Container from "@/components/Container.astro";
-import { Image } from "astro:assets";
-import { formatDate } from "@lib/utils";
-import ShimmerButton from "./ui/shimmer-button";
 
 const today = new Date();
 ---
@@ -25,7 +22,7 @@ const today = new Date();
           <Link
             href={`mailto:${SITE.EMAIL}`}
             underline={false}
-            className="text-xl md:text-2xl border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-neutral-900 dark:hover:border-white transition-colors"
+            className="text-xl md:text-2xl border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-neutral-900 dark:hover:border-white dark:hover:text-white/80 transition-colors"
           >
             {SITE.EMAIL}
           </Link>
