@@ -1,10 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
-  --font-instruments-serif: "Instrument Serif", "Lora", ui-serif, Georgia,
-    Cambria, "Times New Roman", Times, serif;
+  --font-instruments-serif:
+    "Instrument Serif", "Lora", ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
 }
 @font-face {
   font-family: "Geist";
