@@ -50,6 +50,5 @@
       "esbuild",
       "sharp"
     ]
-  },
-  "packageManager": "pnpm@10.33.0"
+  }
 }
